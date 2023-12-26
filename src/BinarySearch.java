@@ -1,18 +1,20 @@
+// Тема урока: Бинарный поиск. Сложность O(lon(n))
+// Бинарный поиск выполняется в уже отсортированном массиве.
+
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] array = new int[100];
-        for(int i = 0; i < array.length; i++) {
-            array[i] = i + 1;
-        }
-        System.out.println("Для элемента 28: " + binarySearch(array, 55));
-        System.out.println("Для элемента -13: " + binarySearch(array, -55));
+        int[] array = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
+
+        System.out.println("Для элемента 11: " + binarySearch(array, 11));
+        System.out.println("Для элемента 12: " + binarySearch(array, 12));
     }
 
+    // Бинарный поиск
     private static int binarySearch(int[] array, int item) {
         int low = 0;  // левая граница массива
         int high = array.length - 1;  // правая граница массива
         while(low <= high) {
-            int mid = (low + high) / 2;  // середина
+            int mid = (low + high) / 2;  // поиск середины
             if(array[mid] == item) {  // элемент найден
                 return mid;
             }
